@@ -53,6 +53,18 @@ To understand how real-world distributed systems are built using microservices, 
 
 ---
 
+## 🧠 Domain-Driven Design (DDD) Overview
+
+<p>
+  <img src="ddd-diagram.png" alt="Domain-Driven Design (DDD) Architecture Diagram" width="900">
+</p>
+
+## 🧱 Architecture  Diagram
+
+<p>
+  <img src="arch-diagram.png" alt="Microservices Architecture" width="900">
+</p>
+
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
