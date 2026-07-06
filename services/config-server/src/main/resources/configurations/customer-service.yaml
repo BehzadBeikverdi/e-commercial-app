@@ -2,7 +2,7 @@ spring:
   data:
     mongodb:
       username: mongo
-      password: BeLuckyBalbao
+      password: mongo
       host: localhost
       port: 27017
       database: customer
