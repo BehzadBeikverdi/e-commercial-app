@@ -62,6 +62,14 @@ public class CustomerServiceImpl implements CustomerService {
         return BaseResponseModel.success("Action Successfully", deleteCustomerById(customerId));
     }
 
+    @Override
+    public BaseResponseModel<Boolean> findCustomer(String customerId) {
+
+        findCustomerById(customerId);
+
+        return BaseResponseModel.success("Customer found", true);
+    }
+
     private void mergeCustomer(CustomerDocument customer, CustomerRequestModel request) {
 
         if (StringUtil.isNullOrEmpty(request.firstname())) {

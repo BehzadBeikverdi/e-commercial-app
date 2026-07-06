@@ -41,6 +41,12 @@ public class CustomerController {
         return service.getCustomer(customerId);
     }
 
+    @GetMapping("/{customerId}")
+    public BaseResponseModel<Boolean> findCustomer(@PathVariable @Valid String customerId) {
+
+        return service.findCustomer(customerId);
+    }
+
     @DeleteMapping("/{customerId}")
     public BaseResponseModel<CustomerResponseModel> deleteCustomer(@PathVariable @Valid String customerId) {
 

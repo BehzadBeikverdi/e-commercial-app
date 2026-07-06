@@ -17,4 +17,6 @@ public interface CustomerService {
     BaseResponseModel<CustomerResponseModel> getCustomer(@Valid String customerId);
 
     BaseResponseModel<CustomerResponseModel> deleteCustomer(@Valid String customerId);
+
+    BaseResponseModel<Boolean> findCustomer(@Valid String customerId);
 }
