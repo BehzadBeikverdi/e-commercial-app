@@ -1,6 +1,7 @@
 package com.stringwavetech.ecommerce.service;
 
 import com.stringwavetech.ecommerce.client.CustomerClient;
+import com.stringwavetech.ecommerce.client.PaymentClient;
 import com.stringwavetech.ecommerce.client.ProductClient;
 import com.stringwavetech.ecommerce.exceptions.BusinessException;
 import com.stringwavetech.ecommerce.exceptions.NotFoundException;
@@ -31,6 +32,7 @@ public class OrderServiceImpl implements OrderService {
     private final OrderMapper mapper;
     private final OrderLineService orderLineService;
     private final OrderProducer orderProducer;
+    private final PaymentClient paymentClient;
 
     @Override
     public BaseResponseModel<String> createOrder(OrderRequestModel request) {
@@ -59,6 +61,7 @@ public class OrderServiceImpl implements OrderService {
                 order.getReference(),
                 customer
         );
+        paymentClient.requestOrderPayment(paymentRequest);
 
         orderProducer.sendOrderConfirmation(
                 new OrderConfirmation(
