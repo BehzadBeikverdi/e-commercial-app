@@ -2,6 +2,7 @@ package com.stringwavetech.ecommerce.service;
 
 import com.stringwavetech.ecommerce.mapper.OrderLineMapper;
 import com.stringwavetech.ecommerce.model.BaseResponseModel;
+import com.stringwavetech.ecommerce.model.request.OrderLineRequestModel;
 import com.stringwavetech.ecommerce.model.response.OrderLineResponseModel;
 import com.stringwavetech.ecommerce.repository.OrderLineRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,13 @@ public class OrderLineServiceImpl implements OrderLineService {
 
     private final OrderLineRepository repository;
     private final OrderLineMapper mapper;
+
+    @Override
+    public UUID saveOrderLine(OrderLineRequestModel request) {
+
+        var order = mapper.toOrderLine(request);
+        return repository.save(order).getId();
+    }
 
     @Override
     public BaseResponseModel<List<OrderLineResponseModel>> getAllOrderLineByOrder(String orderId) {
