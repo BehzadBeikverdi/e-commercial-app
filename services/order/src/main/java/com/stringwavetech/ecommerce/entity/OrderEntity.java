@@ -25,6 +25,6 @@ public class OrderEntity extends BaseEntity {
     @Enumerated(STRING)
     private PaymentMethodEnum paymentMethod;
     private UUID customerId;
-    @OneToMany(mappedBy = "orderEntity")
-    private List<OrderLineEntity> orderLineEntities;
+    @OneToMany(mappedBy = "order")
+    private List<OrderLineEntity> orderLines;
 }
