@@ -19,7 +19,7 @@ public class PaymentController {
     private final PaymentService service;
 
     @PostMapping
-    public BaseResponseModel<Integer> createPayment(
+    public BaseResponseModel<String> createPayment(
             @RequestBody @Valid PaymentRequestModel request
     ) {
         return service.createPayment(request);

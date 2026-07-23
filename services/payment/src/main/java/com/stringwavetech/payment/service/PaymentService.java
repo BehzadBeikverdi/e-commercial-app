@@ -6,5 +6,5 @@ import jakarta.validation.Valid;
 
 public interface PaymentService {
 
-    BaseResponseModel<Integer> createPayment(@Valid PaymentRequestModel request);
+    BaseResponseModel<String> createPayment(@Valid PaymentRequestModel request);
 }
